@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaTrack - Detalle del Proyecto</title>
+    <link rel="stylesheet" href="detalle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="contenido-principal">
+        <div class="contenedor">
+            <!-- Header del proyecto -->
+            <div class="proyecto-header-detalle">
+                <button class="btn btn-secondary" id="volverListas">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver a Proyectos
+                </button>
+                <div class="proyecto-titulo-detalle">
+                    <h1 id="proyectoNombreTitulo">Cargando...</h1>
+                    <div class="proyecto-meta">
+                        <span class="estado-badge" id="proyectoEstadoBadge">Activo</span>
+                        <span class="prioridad-badge" id="proyectoPrioridadBadge">Media</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="editarProyectoBtn">
+                    <i class="fas fa-edit"></i>
+                    Editar Proyecto
+                </button>
+            </div>
+
+            <!-- Barra de progreso -->
+            <div class="progreso-container">
+                <div class="progreso-header">
+                    <span>Progreso del Proyecto</span>
+                    <span id="progresoPorcentaje">0%</span>
+                </div>
+                <div class="progreso-bar">
+                    <div class="progreso-fill" id="progresoFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Navegación entre secciones -->
+            <nav class="secciones-nav">
+                <button class="seccion-btn active" data-seccion="informacion">
+                    <i class="fas fa-info-circle"></i>
+                    Información
+                </button>
+                <button class="seccion-btn" data-seccion="archivos">
+                    <i class="fas fa-folder"></i>
+                    Archivos
+                </button>
+                <button class="seccion-btn" data-seccion="bocetos">
+                    <i class="fas fa-palette"></i>
+                    Bocetos
+                </button>
+                <button class="seccion-btn" data-seccion="codigo">
+                    <i class="fas fa-code"></i>
+                    Código
+                </button>
+                <button class="seccion-btn" data-seccion="tareas">
+                    <i class="fas fa-tasks"></i>
+                    Tareas
+                </button>
+                <button class="seccion-btn" data-seccion="notas">
+                    <i class="fas fa-sticky-note"></i>
+                    Notas
+                </button>
+            </nav>
+
+            <!-- Sección de Información -->
+            <section id="seccion-informacion" class="seccion-contenido active">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-calendar"></i> Fechas</h3>
+                        <div class="info-item">
+                            <strong>Creación:</strong>
+                            <span id="infoFechaCreacion">-</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Límite:</strong>
+                            <span id="infoFechaLimite">-</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-tags"></i> Clasificación</h3>
+                        <div class="info-item">
+                            <strong>Categoría:</strong>
+                            <span id="infoCategoria">-</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Prioridad:</strong>
+                            <span id="infoPrioridad">-</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-chart-line"></i> Presupuesto</h3>
+                        <div class="info-item">
+                            <strong>Presupuesto:</strong>
+                            <span id="infoPresupuesto">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="descripcion-card">
+                    <h3><i class="fas fa-align-left"></i> Descripción</h3>
+                    <p id="infoDescripcion">Sin descripción...</p>
+                </div>
+            </section>
+
+            <!-- Sección de Archivos -->
+            <section id="seccion-archivos" class="seccion-contenido">
+                <div class="archivos-header">
+                    <h3>Gestión de Archivos</h3>
+                    <div class="archivos-actions">
+                        <button class="btn btn-primary" id="crearCarpetaBtn">
+                            <i class="fas fa-folder-plus"></i>
+                            Nueva Carpeta
+                        </button>
+                        <button class="btn btn-secondary" id="subirArchivoBtn">
+                            <i class="fas fa-upload"></i>
+                            Subir Archivo
+                        </button>
+                    </div>
+                </div>
+
+                <input type="file" id="fileInput" multiple style="display: none;">
+
+                <!-- Modal para crear carpeta -->
+                <div id="carpetaModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Nueva Carpeta</h3>
+                            <button class="modal-close" id="cerrarCarpetaModal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <form id="carpetaForm">
+                            <div class="form-group">
+                                <label for="nombreCarpeta">Nombre de la Carpeta</label>
+                                <input type="text" id="nombreCarpeta" required placeholder="Ej: Diseños, Documentos...">
+                            </div>
+                            <div class="modal-actions">
+                                <button type="button" class="btn btn-secondary" id="cancelarCarpeta">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Crear Carpeta</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="archivos-container" id="archivosContainer">
+                    <!-- Las carpetas y archivos se cargarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Bocetos -->
+            <section id="seccion-bocetos" class="seccion-contenido">
+                <div class="bocetos-header">
+                    <h3>Bocetos y Diseños</h3>
+                    <div class="bocetos-actions">
+                        <button class="btn btn-primary" id="subirBocetoBtn">
+                            <i class="fas fa-upload"></i>
+                            Subir Imagen
+                        </button>
+                        <button class="btn btn-secondary" id="nuevoBocetoBtn">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Boceto
+                        </button>
+                    </div>
+                </div>
+
+                <input type="file" id="bocetoInput" accept="image/*" style="display: none;">
+
+                <div class="bocetos-grid" id="bocetosGrid">
+                    <!-- Los bocetos se cargarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Código -->
+            <section id="seccion-codigo" class="seccion-contenido">
+                <div class="codigo-header">
+                    <h3>Editor de Código</h3>
+                    <div class="codigo-actions">
+                        <button class="btn btn-primary" id="nuevoArchivoCodigoBtn">
+                            <i class="fas fa-file-code"></i>
+                            Nuevo Archivo
+                        </button>
+                        <button class="btn btn-secondary" id="subirArchivoCodigoBtn">
+                            <i class="fas fa-upload"></i>
+                            Subir Archivo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="codigo-container">
+                    <div class="codigo-sidebar">
+                        <div class="codigo-archivos" id="codigoArchivos">
+                            <!-- Lista de archivos de código -->
+                        </div>
+                    </div>
+                    <div class="codigo-editor">
+                        <div class="editor-header">
+                            <span id="editorNombreArchivo">Selecciona un archivo</span>
+                            <div class="editor-actions">
+                                <button class="btn btn-icon" id="guardarCodigoBtn" title="Guardar">
+                                    <i class="fas fa-save"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="editorCodigo" placeholder="Escribe tu código aquí..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Tareas -->
+            <section id="seccion-tareas" class="seccion-contenido">
+                <div class="tareas-header">
+                    <h3>Lista de Tareas</h3>
+                    <button class="btn btn-primary" id="nuevaTareaBtn">
+                        <i class="fas fa-plus"></i>
+                        Nueva Tarea
+                    </button>
+                </div>
+
+                <div class="tareas-container" id="tareasContainer">
+                    <!-- Las tareas se cargarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Notas -->
+            <section id="seccion-notas" class="seccion-contenido">
+                <div class="notas-header">
+                    <h3>Notas del Proyecto</h3>
+                    <button class="btn btn-primary" id="guardarNotasBtn">
+                        <i class="fas fa-save"></i>
+                        Guardar Notas
+                    </button>
+                </div>
+                <textarea id="editorNotas" placeholder="Escribe aquí tus notas, ideas, observaciones..."></textarea>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal para editar proyecto -->
+    <div id="editarProyectoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Proyecto</h3>
+                <button class="modal-close" id="cerrarEditarModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editarProyectoForm">
+                <!-- Formulario similar al de creación pero con datos actuales -->
+            </form>
+        </div>
+    </div>
+
+    <script src="detalle-proyecto.js"></script>
+</body>
+</html>
