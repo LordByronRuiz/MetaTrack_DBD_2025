@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>MetaTrack - Detalle del Proyecto</title>
+    <link rel="stylesheet" href="detalle.css">
+    <script src="detalle-proyecto.js" defer></script>
+</head>
+<body>
+    <div class="proyecto-container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../img/logo.png" alt="MetaTrack Logo">
+                <h1>MetaTrack</h1>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="sidebar-buttons">
+                <button class="back-button">
+                    <span class="icon">←</span>
+                </button>
+                <button class="edit-button">Editar Proyecto</button>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="#informacion"><span class="dot"></span> Informacion</a></li>
+                    <li><a href="#archivos"><span class="dot"></span> Archivos</a></li>
+                    <li><a href="#codigo"><span class="dot"></span> Codigo</a></li>
+                    <li><a href="#tareas"><span class="dot"></span> Tareas</a></li>
+                    <li><a href="#notas"><span class="dot"></span> Notas</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content-area">
+            <!-- El contenido cambiará según la sección seleccionada -->
+            <div id="informacion" class="section active">
+                <div class="proyecto-header">
+                    <div class="estado-prioridad">
+                        <div class="estado">Estado (Activo)</div>
+                        <div class="prioridad">Prioridad (Alta)</div>
+                    </div>
+                    <h2 class="nombre-proyecto">Nombre del proyecto</h2>
+                    <div class="etiquetas">
+                        <span class="etiqueta etiqueta-roja">Etiqueta 1</span>
+                        <span class="etiqueta etiqueta-naranja">Etiqueta 2</span>
+                        <span class="etiqueta etiqueta-verde">Etiqueta 3</span>
+                        <span class="etiqueta etiqueta-azul">Etiqueta 4</span>
+                    </div>
+                </div>
+                <div class="info-grid">
+                    <div class="info-box info-adicional">
+                        <h3>Información Adicional</h3>
+                        <div class="info-content">
+                            <!-- Contenido de información adicional -->
+                        </div>
+                    </div>
+                    <div class="info-box fecha-limite">
+                        <h3>Fecha (Creación)/ Límite</h3>
+                        <div class="fecha-content">
+                            <p>Fecha: 20/05/2025</p>
+                            <p>Límite: 20/10/2025</p>
+                        </div>
+                    </div>
+                    <div class="info-box descripcion">
+                        <h3>Descripción</h3>
+                        <div class="descripcion-content">
+                            <p>Acá va la descripción del proyecto</p>
+                        </div>
+                    </div>
+                    <div class="info-box categorias">
+                        <h3>Categorías</h3>
+                        <div class="categorias-content">
+                            <!-- Contenido de categorías -->
+                        </div>
+                    </div>
+                    <div class="info-box presupuesto">
+                        <h3>Presupuesto</h3>
+                        <div class="presupuesto-content">
+                            <p>Presupuesto de Inicio: $10000</p>
+                            <p>Gastado: $2000</p>
+                            <p>Estado de presupuesto: $8000</p>
+                            <div class="transferencias">
+                                <h4>Información de transferencias</h4>
+                                <button class="btn-movimientos">Movimientos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="archivos" class="section">
+                <h2>Archivos del Proyecto</h2>
+                <div class="files-content">
+                    <!-- Contenido de archivos -->
+                </div>
+            </div>
+            <div id="codigo" class="section">
+                <h2>Código del Proyecto</h2>
+                <div class="code-content">
+                    <!-- UI para seleccionar y explorar un repositorio de GitHub -->
+                    <div class="repo-controls" style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+                        <input type="text" class="repo-input" placeholder="owner/repo (ej: facebook/react)" style="flex:1;padding:8px;border-radius:6px;border:1px solid #ccc;">
+                        <button class="repo-load-btn btn" style="padding:8px 12px;border-radius:6px;">Cargar</button>
+                        <button class="repo-save-btn btn" title="Guardar referencia al proyecto" style="padding:8px 12px;border-radius:6px;display:none;">Guardar en Proyecto</button>
+                    </div>
+                    <div class="repo-list" style="display:flex;gap:16px;">
+                        <div class="repo-tree" style="width:40%; max-height:420px; overflow:auto; border:1px solid #eee; padding:8px; border-radius:6px;">
+                            <p class="repo-placeholder" style="color:#666;margin:0;">Introduce owner/repo y pulsa "Cargar" para explorar</p>
+                        </div>
+                        <div class="repo-viewer" style="flex:1; max-height:420px; overflow:auto;">
+                            <div class="repo-file-info" style="margin-bottom:8px;color:#444;"></div>
+                            <pre class="repo-file-content" style="white-space:pre-wrap; background:#fafafa; padding:12px; border-radius:6px; border:1px solid #eee; min-height:180px; overflow:auto;"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tareas" class="section">
+                <h2>Tareas del Proyecto</h2>
+                <div class="tasks-content">
+                    <!-- Contenido de tareas -->
+                </div>
+            </div>
+            <div id="notas" class="section">
+                <h2>Notas del Proyecto</h2>
+                <div class="notes-content">
+                    <!-- Contenido de notas -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

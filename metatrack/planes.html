@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaTrack - Planes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="logo">
+        <img src="img/logo.png" alt="logo">
+        <h1 class="nombre">MetaTrack</h1>
+    </div>     
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="listas.html" class="nav-link">Listas</a></li>
+                <li><a href="descubre.html" class="nav-link">Descubre</a></li>
+                <li><a href="planes.html" class="nav-link active">Planes</a></li>
+                <li><a href="/Login/login.html" class="nav-link nav-button">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <div class="contenedor">
+            <!-- Header de la sección de planes -->
+            <div class="planes-header">
+                <h2>Elige el Plan Perfecto para Ti</h2>
+                <p>Desde proyectos personales hasta equipos empresariales, tenemos una solución para cada necesidad</p>
+            </div>
+
+            <!-- Selector de periodicidad -->
+            <div class="selector-periodo">
+                <span class="periodo-opcion active" data-periodo="mensual">Facturación Mensual</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggleAnual">
+                    <span class="slider"></span>
+                </label>
+                <span class="periodo-opcion" data-periodo="anual">Facturación Anual</span>
+                <span class="ahorro-anual">¡Ahorra hasta 20%!</span>
+            </div>
+
+            <!-- Grid de planes -->
+            <div class="planes-grid">
+                <!-- Plan Básico -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Básico</h3>
+                        <p class="plan-descripcion">Ideal para comenzar y organizar proyectos personales</p>
+                        <div class="plan-precio">
+                            <span class="precio" data-mensual="$499" data-anual="$4,790">$499</span>
+                            <span class="periodo">/mes</span>
+                        </div>
+                        <div class="plan-ahorro" style="display: none;">
+                            <span>$4790/año (equivalente a $399/mes)</span>
+                        </div>
+                    </div>
+                    <div class="plan-caracteristicas">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hasta 5 proyectos activos</li>
+                            <li><i class="fas fa-check"></i> 3 colaboradores por proyecto</li>
+                            <li><i class="fas fa-check"></i> 5GB de almacenamiento</li>
+                            <li><i class="fas fa-check"></i> Panel básico de estadísticas</li>
+                            <li><i class="fas fa-check"></i> Soporte por correo electrónico</li>
+                            <li><i class="fas fa-times"></i> <span class="caracteristica-no">Gestión de presupuesto</span></li>
+                            <li><i class="fas fa-times"></i> <span class="caracteristica-no">Integraciones avanzadas</span></li>
+                        </ul>
+                    </div>
+                    <div class="plan-accion">
+                        <button class="btn-plan btn-plan-basico">Comenzar Gratis</button>
+                        <p class="plan-trial">14 días de prueba gratuita</p>
+                    </div>
+                </div>
+
+                <!-- Plan Profesional -->
+                <div class="plan-card plan-destacado">
+                    <div class="plan-badge">Más Popular</div>
+                    <div class="plan-header">
+                        <h3>Profesional</h3>
+                        <p class="plan-descripcion">Perfecto para freelancers y equipos pequeños</p>
+                        <div class="plan-precio">
+                            <span class="precio" data-mensual="$999" data-anual="$9,590">$999</span>
+                            <span class="periodo">/mes</span>
+                        </div>
+                        <div class="plan-ahorro" style="display: none;">
+                            <span>$9,590/año (equivalente a $799/mes)</span>
+                        </div>
+                    </div>
+                    <div class="plan-caracteristicas">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Proyectos ilimitados</li>
+                            <li><i class="fas fa-check"></i> Hasta 10 colaboradores por proyecto</li>
+                            <li><i class="fas fa-check"></i> 50GB de almacenamiento</li>
+                            <li><i class="fas fa-check"></i> Estadísticas avanzadas y reportes</li>
+                            <li><i class="fas fa-check"></i> Soporte prioritario</li>
+                            <li><i class="fas fa-check"></i> Gestión completa de presupuesto</li>
+                            <li><i class="fas fa-check"></i> Integraciones con herramientas populares</li>
+                            <li><i class="fas fa-times"></i> <span class="caracteristica-no">Personalización de marca</span></li>
+                        </ul>
+                    </div>
+                    <div class="plan-accion">
+                        <button class="btn-plan btn-plan-profesional">Obtener Profesional</button>
+                    </div>
+                </div>
+
+                <!-- Plan Empresarial -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Empresarial</h3>
+                        <p class="plan-descripcion">Para organizaciones que necesitan máximo rendimiento</p>
+                        <div class="plan-precio">
+                            <span class="precio" data-mensual="$1,999" data-anual="$19,190">$1,999</span>
+                            <span class="periodo">/mes</span>
+                        </div>
+                        <div class="plan-ahorro" style="display: none;">
+                            <span>$19,190/año (equivalente a $1,599/mes)</span>
+                        </div>
+                    </div>
+                    <div class="plan-caracteristicas">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todo lo del plan Profesional</li>
+                            <li><i class="fas fa-check"></i> Colaboradores ilimitados</li>
+                            <li><i class="fas fa-check"></i> 500GB de almacenamiento</li>
+                            <li><i class="fas fa-check"></i> Personalización completa de marca</li>
+                            <li><i class="fas fa-check"></i> API avanzada y webhooks</li>
+                            <li><i class="fas fa-check"></i> Gestor de proyectos dedicado</li>
+                            <li><i class="fas fa-check"></i> Migración de datos asistida</li>
+                        </ul>
+                    </div>
+                    <div class="plan-accion">
+                        <button class="btn-plan btn-plan-empresarial">Obtener Empresarial</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de preguntas frecuentes -->
+            <div class="preguntas-frecuentes">
+                <h3>Preguntas Frecuentes</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>¿Puedo cambiar de plan en cualquier momento?</h4>
+                        <p>Sí, puedes mejorar o reducir tu plan en cualquier momento. Los cambios se reflejarán en tu próxima factura.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>¿Qué métodos de pago aceptan?</h4>
+                        <p>Aceptamos tarjetas de crédito/débito, PayPal y transferencias bancarias para planes anuales.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>¿Hay descuentos para equipos grandes?</h4>
+                        <p>Sí, ofrecemos descuentos especiales para equipos de más de 10 usuarios. Contacta a nuestro equipo de ventas.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>¿Puedo cancelar mi suscripción cuando quiera?</h4>
+                        <p>Absolutamente. Puedes cancelar en cualquier momento sin cargos adicionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MetaTrack</h3>
+                    <p>La herramienta definitiva para gestionar tus proyectos y hacer realidad tus ideas.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="listas.html">Listas</a></li>
+                        <li><a href="descubre.html">Descubre</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="ayuda.html">Centro de Ayuda</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos.html">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="img/Instagram.png" alt="Instagram" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/Twitter.png" alt="Twitter" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/Youtube.png" alt="YouTube" width="20" height="20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 MetaTrack. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle entre mensual y anual
+        document.getElementById('toggleAnual').addEventListener('change', function() {
+            const isAnual = this.checked;
+            const precios = document.querySelectorAll('.precio');
+            const ahorros = document.querySelectorAll('.plan-ahorro');
+            const periodos = document.querySelectorAll('.periodo-opcion');
+            
+            precios.forEach(precio => {
+                const mensual = precio.getAttribute('data-mensual');
+                const anual = precio.getAttribute('data-anual');
+                precio.textContent = isAnual ? anual : mensual;
+            });
+            
+            ahorros.forEach(ahorro => {
+                ahorro.style.display = isAnual ? 'block' : 'none';
+            });
+            
+            periodos.forEach(periodo => {
+                if (periodo.getAttribute('data-periodo') === (isAnual ? 'anual' : 'mensual')) {
+                    periodo.classList.add('active');
+                } else {
+                    periodo.classList.remove('active');
+                }
+            });
+        });
+
+        // Botones de planes
+        document.querySelectorAll('.btn-plan').forEach(boton => {
+            boton.addEventListener('click', function() {
+                const plan = this.closest('.plan-card').querySelector('h3').textContent;
+                alert(`¡Excelente elección! Redirigiendo al proceso de registro para el plan ${plan}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+/* ---------------------------------------------------------------- */
+/* -------------Visual Principal De Detalles-Proyecto-------------- */
+/* ---------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.proyecto-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Estilos para el sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #f0f0e0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 13%; 
+}
+
+.sidebar-buttons {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0e0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-button {
+    flex: 1;
+    height: 40px;
+    background: linear-gradient(135deg, #f8d775, #fad66b, #f5c642);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu {
+    flex: 1;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    background-color: #85799c;
+}
+
+.menu a:hover {
+    background-color: #79669b;
+}
+
+.menu li.active a {
+    background-color: #81749c;
+    font-weight: bold;
+}
+
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Estilos para el área de contenido */
+.content-area {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: #8daec3;
+    position: relative;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Estilos específicos para cada sección */
+.files-content, .code-content, .tasks-content, .notes-content {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    min-height: 300px;
+}
+
+/* ---------------------------------------------------------------- */
+/* ------------------Informacion del Proyecto---------------------- */
+/* ---------------------------------------------------------------- */
+
+.proyecto-header {
+    background-color: #c5dfe0;
+    padding: 15px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.estado-prioridad {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.estado, .prioridad {
+    background-color: #fcfce2;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.nombre-proyecto {
+    text-align: center;
+    margin: 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+.etiquetas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.etiqueta {
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+}
+
+.etiqueta-roja { background-color: #4d3e6b; }
+.etiqueta-naranja { background-color: #81749c; }
+.etiqueta-verde { background-color: #fcfce2; }
+.etiqueta-azul { background-color: #ffffff;; }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+.info-box {
+    background-color: #f7f3dd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.info-adicional {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.fecha-limite {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.presupuesto {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.descripcion {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.categorias {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.fecha-content, .presupuesto-content, .descripcion-content {
+    padding: 10px;
+}
+
+.transferencias {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #333;
+}
+
+.transferencias h4 {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-movimientos {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
